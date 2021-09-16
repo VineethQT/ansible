@@ -1,0 +1,24 @@
+//referenceapplicationskhaja.s3-us-west-2.amazonaws.com/spring-petclinic-2.4.2.jar
+-name:diployment for springpetclinic on linux service
+ host:appserver
+ become:yes
+  tasks:
+    - name:update ubuntu packeges and install java
+      apt:
+	    name: openjdk-11-jdk
+	    update_chace:yes
+	    state:present
+	  -name:create springpetclinic directory
+	  file:
+	    path:/usr/share/springpetclinic
+	    state:directory
+	 -name:download url of springpetclinic
+	 get-url:
+	    url:https://referenceapplicationskhaja.s3-us-west-2.amazonaws.com/spring-petclinic-2.4.2.jar
+	    dest: /usr/share/springpetclinic/spring-petclinic-2.4.2.jar
+	 -name:adduser springbhootuser
+	 user:
+	  name:springbhootuser
+	    state:present
+		
+	
