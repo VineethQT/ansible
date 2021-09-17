@@ -1,0 +1,23 @@
+---
+- name: Spring-Petclinic Deployment In Linuxserver
+  hosts: webserver
+  become: yes
+  task:
+    - name: update ubuntu packages and install java
+      apt: 
+        name: openjdk-11-jdk
+        update_cache: yes
+        state: present
+    - name: create Spring-Petclinic directory
+      file: 
+        path: /usr/share/springpetclinic
+        state: directory
+    - name: download Spring-Petclinic 
+      get_url: 
+        url:  https://referenceapplicationskhaja.s3-us-west-2.amazonaws.com/spring-petclinic-2.4.2.jar
+        dest: /usr/share/springpetclinic/spring-petclinic-2.4.2.jar
+    - name: adduser Spring-Petclinic
+      user: 
+        name: springbootuser
+        password: springbootuser
+        state: present               
