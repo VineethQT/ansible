@@ -1,8 +1,8 @@
 ---
 - name: Spring-Petclinic Deployment In Linuxserver
-  hosts: webserver
+  hosts: all
   become: yes
-  task:
+  tasks:
     - name: update ubuntu packages and install java
       apt: 
         name: openjdk-11-jdk
@@ -20,4 +20,15 @@
       user: 
         name: springbootuser
         password: springbootuser
-        state: present               
+        state: present
+    - name: change ownership of jar file
+      file: 
+        path: /usr/share/springpetclinic/spring-petclinic-2.4.2.jar
+        owner: springbootuser
+        mode: 500
+        state: file
+    - name: enableing springbootuser
+      systemed: 
+        name: springbootuser.service
+        enabled: yes
+        state: started
