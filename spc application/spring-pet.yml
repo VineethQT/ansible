@@ -28,7 +28,7 @@
         mode: '500'
         state: file
     - name: enableing springbootuser
-      systemed: 
+      systemd: 
         name: springbootuser.service
         enabled: yes
         state: started
