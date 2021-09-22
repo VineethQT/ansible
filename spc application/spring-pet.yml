@@ -30,6 +30,5 @@
     - name: enableing Spring-Petclinic
       systemd:  
         name: Spring-Petclinic.service
-        deamon_reload: yes
         enabled: yes
         state: restarted
