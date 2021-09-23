@@ -31,4 +31,4 @@
       systemd:  
         name: Spring-Petclinic.service
         enabled: yes
-        state: restarted
+        state: started
