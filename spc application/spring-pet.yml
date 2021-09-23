@@ -27,8 +27,7 @@
         owner: springbootuser
         mode: '500'
         state: file
-    - name: enableing Spring-Petclinic
-      systemd:  
+    - name: enable and start Spring-Petclinic
+      systemd: 
         name: Spring-Petclinic.service
-        enabled: yes
         state: started
