@@ -30,8 +30,8 @@
     - name: copy the jar file
       copy: 
         dest: /etc/systemd/system/springpetclinic.service
-        src: Spring-Petclinic.service
-        remote_src: yes    
+        src: SpringPetclinic.service
+        remote_src: no  
     - name: enable and start Spring-Petclinic
       systemd: 
         name: Spring-Petclinic.service
