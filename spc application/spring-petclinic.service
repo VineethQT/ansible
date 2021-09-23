@@ -5,7 +5,7 @@ After=syslog.target
 [Service]
 User=springbootuser
 ExecStart=/usr/bin/java -jar /usr/share/springpetclinic/spring-petclinic-2.4.2.jar
-SuccessExitStatus=143 
+SuccessExitStatus=143
 
-[Install] 
+[Install]
 WantedBy=multi-user.target
