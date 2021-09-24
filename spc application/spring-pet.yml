@@ -8,15 +8,15 @@
         name: openjdk-11-jdk
         update_cache: yes
         state: present
-    - name: create Spring-Petclinic directory
+    - name: create Spring Petclinic directory
       file: 
         path: /usr/share/springpetclinic
         state: directory
-    - name: download Spring-Petclinic 
+    - name: download SpringPetclinic 
       get_url: 
         url:  https://referenceapplicationskhaja.s3-us-west-2.amazonaws.com/spring-petclinic-2.4.2.jar
         dest: /usr/share/springpetclinic/spring-petclinic-2.4.2.jar
-    - name: adduser Spring-Petclinic
+    - name: adduser SpringPetclinic
       user: 
         name: springbootuser
         password: springbootuser
@@ -30,9 +30,9 @@
     - name: copy the jar file
       copy: 
         dest: /etc/systemd/system/springpetclinic.service
-        src: Spring-Petclinic.service
+        src: SpringPetclinic.service
         remote_src: yes
     - name: enable and start Spring-Petclinic
       systemd: 
-        name: Spring-Petclinic.service
+        name: SpringPetclinic.service
         state: started
