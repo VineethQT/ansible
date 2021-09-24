@@ -9,6 +9,9 @@
     app_file_name: spring-petclinic-2.4.2.jar
     app_username: springbootuser 
   tasks:
+    - name: instaling ubuntu and java packages
+      debug: 
+        vars: "{{java_packages}}" 
     - name: update ubuntu packages and install java
       apt: 
         name: "{{java_packages}}"
