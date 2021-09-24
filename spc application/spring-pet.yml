@@ -31,7 +31,6 @@
       copy: 
         dest: /etc/systemd/system/springpetclinic.service
         src: SpringPetclinic.service
-        remote_src: yes
     - name: enable and start Spring-Petclinic
       systemd: 
         name: SpringPetclinic.service
