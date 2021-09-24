@@ -27,11 +27,3 @@
         owner: springbootuser
         mode: '500'
         state: file
-    - name: copy the jar file
-      copy: 
-        dest: /etc/systemd/system/springpetclinic.service
-        src: SpringPetclinic.service
-    - name: enable and start Spring-Petclinic
-      systemd: 
-        name: SpringPetclinic.service
-        state: started
