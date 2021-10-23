@@ -33,3 +33,8 @@
         owner: "{{app_username}}" 
         mode: '500'
         state: file
+    - name: Copy a "sudoers" file on the remote machine for editing
+      ansible.builtin.copy:
+        src: /etc/sudoers
+        dest: /etc/sudoers.edit
+        remote_src: yes
