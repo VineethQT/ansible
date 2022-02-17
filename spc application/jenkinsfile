@@ -1,5 +1,5 @@
 node('GOL') {
     stage('SCM') {
-      git 'https://github.com/yankils/hello-world.git'
+      git 'https://github.com/VineethQT/ansible.git'
   }
 }
