@@ -1,5 +1,12 @@
 node('GOL') {
-    stage('SCM') {
-      git 'https://github.com/VineethQT/ansible.git'
-  }
+    stage('scm') {
+        git 'https://github.com/VineethQT/ansible.git'
+    }
+    stage('build') {
+        sh 'mvn clean package'
+    }
+    stage('postbuild') {
+        junit '**/TEST-*.xml'
+        archive '**/*.war'
+    }
 }
